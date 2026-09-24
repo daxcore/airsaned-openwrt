@@ -20,9 +20,6 @@ PKG_BUILD_DIR:=$(BUILD_DIR)/AirSane-$(PKG_VERSION)
 include $(INCLUDE_DIR)/package.mk
 include $(INCLUDE_DIR)/cmake.mk
 
-#TAR_OPTIONS:=--strip-components 1 $(TAR_OPTIONS)
-#TAR_CMD=$(HOST_TAR) -C $(1) $(TAR_OPTIONS)
-
 define Package/airsaned
   TITLE:=Publish SANE scanners via Apple AirScan
   URL:=https://github.com/SimulPiscator/AirSane
