@@ -1,6 +1,8 @@
 name: build
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
 
 permissions:
   contents: write
@@ -81,7 +83,7 @@ jobs:
 
     steps:
       - name: Checkout gh-pages
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: gh-pages
           fetch-depth: 1
@@ -331,7 +333,6 @@ jobs:
                   for file in files:
                       relative_path = file.as_posix()
 
-                      # Pfad ausgehend von /releases/
                       url = "/airsaned-openwrt/" + relative_path
 
                       html += f"""
